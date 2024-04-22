@@ -1,4 +1,4 @@
-import 'package:first_app/screen/simple_interest_screen.dart';
+import 'package:first_app/screen/arithmetic_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -9,9 +9,9 @@ class App extends StatelessWidget {
     return const MaterialApp(
       // themes
       // home: HelloWorldScreen(),
-      home: SimpleInterestScreen(),
+      // home: SimpleInterestScreen(),
       // home: SwapNumbersScreen(),
-      // home: ArithmeticScreen(),
+      home: ArithmeticScreen(),
     );
   }
 }
