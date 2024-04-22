@@ -1,4 +1,3 @@
-
 import 'package:first_app/model/arithmetic_model.dart';
 import 'package:flutter/material.dart';
 //POJO
@@ -39,6 +38,7 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
           key: formKey,
           child: Column(
             children: [
+              // TextField has no validator so use TextFormField
               TextFormField(
                 onChanged: (value) {
                   first = int.parse(value);
