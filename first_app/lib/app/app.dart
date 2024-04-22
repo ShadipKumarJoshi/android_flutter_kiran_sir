@@ -11,6 +11,7 @@ class App extends StatelessWidget {
       // home: HelloWorldScreen(),
       home: SimpleInterestScreen(),
       // home: SwapNumbersScreen(),
+      // home: ArithmeticScreen(),
     );
   }
 }
