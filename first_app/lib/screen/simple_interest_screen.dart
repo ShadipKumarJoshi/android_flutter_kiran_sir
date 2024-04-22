@@ -1,3 +1,4 @@
+import 'package:first_app/model/simple_interest_model.dart';
 import 'package:flutter/material.dart';
 
 class SimpleInterestScreen extends StatefulWidget {
@@ -12,6 +13,11 @@ class _SimpleInterestScreenState extends State<SimpleInterestScreen> {
   double? rateValue;
   double? timeValue;
   double result = 0;
+
+  // Relationship
+  // Loosely coupled
+  SimpleInterestModel? simpleInterestModel;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
