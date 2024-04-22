@@ -78,7 +78,12 @@ class _SimpleInterestScreenState extends State<SimpleInterestScreen> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  result = principalValue! * rateValue! * timeValue! / 100;
+                  // result = principalValue! * rateValue! * timeValue! / 100;
+                  simpleInterestModel = SimpleInterestModel(
+                    principalValue: principalValue!,
+                    rateValue: rateValue!,
+                    timeValue: timeValue!,
+                  );
                 });
               },
               child: const Text('Calculate'),
