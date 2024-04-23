@@ -1,4 +1,4 @@
-import 'package:batch_32a/model/area_model.dart';
+import 'package:first_app/model/area_of_circle_model.dart';
 import 'package:flutter/material.dart';
 
 class CircleScreen extends StatefulWidget {

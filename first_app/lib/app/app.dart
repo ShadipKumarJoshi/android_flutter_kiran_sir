@@ -1,4 +1,4 @@
-import 'package:first_app/screen/area_of_circle_screen.dart';
+import 'package:first_app/screen/circle_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       // home: SimpleInterestScreen(),
       // home: SwapNumbersScreen(),
       // home: ArithmeticScreen(),
-      home: AreaOfCircle(),
+      home: CircleScreen(),
       // home: LayoutScreen(),
     );
   }
