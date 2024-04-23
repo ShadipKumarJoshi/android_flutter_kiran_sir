@@ -1,4 +1,4 @@
-import 'package:first_app/screen/arithmetic_screen.dart';
+import 'package:first_app/screen/area_of_circle_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -11,7 +11,9 @@ class App extends StatelessWidget {
       // home: HelloWorldScreen(),
       // home: SimpleInterestScreen(),
       // home: SwapNumbersScreen(),
-      home: ArithmeticScreen(),
+      // home: ArithmeticScreen(),
+      home: AreaOfCircle(),
+      // home: LayoutScreen(),
     );
   }
 }
