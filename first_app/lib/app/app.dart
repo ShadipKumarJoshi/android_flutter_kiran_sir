@@ -1,4 +1,4 @@
-import 'package:first_app/screen/star_layout.dart';
+import 'package:first_app/screen/star_layout_1column.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -14,7 +14,8 @@ class App extends StatelessWidget {
       // home: ArithmeticScreen(),
       // home: CircleScreen(),
       // home: LayoutScreen(),
-      home: StarLayoutScreen(),
+      // home: StarLayoutScreen(),
+      home: StarLayoutScreen1Column(),
     );
   }
 }
