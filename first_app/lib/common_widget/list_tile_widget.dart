@@ -14,7 +14,15 @@ class ListTileWidget extends StatelessWidget {
       leading: const Icon(Icons.ac_unit),
       title: Text('Title $index'),
       subtitle: const Text('Subtitle'),
-      trailing: const Icon(Icons.arrow_forward_ios),
+      // trailing: const Icon(Icons.arrow_forward_ios),
+      trailing: Wrap(
+        spacing: 8,
+        children: [
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.arrow_forward_ios)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
+        ],
+      ),
     );
   }
 }

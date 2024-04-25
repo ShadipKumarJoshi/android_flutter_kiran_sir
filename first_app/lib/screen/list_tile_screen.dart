@@ -1,3 +1,4 @@
+import 'package:first_app/common_widget/list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
 class ListTileScreen extends StatelessWidget {
@@ -16,14 +17,17 @@ class ListTileScreen extends StatelessWidget {
               // Using for loop to print listtile 100 times
               for (int i = 0; i < 100; i++) ...{
                 if (i % 2 == 0) ...{
-                  ListTile(
-                      leading: const Icon(Icons.ac_unit),
-                      title: const Text('Title'),
-                      subtitle: const Text('Subtitle'),
-                      trailing: const Icon(Icons.delete),
-                      onTap: () {
-                        debugPrint('ListTile tapped');
-                      }),
+                  ListTileWidget(
+                    index: i,
+                  )
+                  // ListTile(
+                  //     leading: const Icon(Icons.ac_unit),
+                  //     title: const Text('Title'),
+                  //     subtitle: const Text('Subtitle'),
+                  //     trailing: const Icon(Icons.delete),
+                  //     onTap: () {
+                  //       debugPrint('ListTile tapped');
+                  //     }),
                 }
               }
 
