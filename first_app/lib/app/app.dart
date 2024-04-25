@@ -1,4 +1,4 @@
-import 'package:first_app/screen/star_layout_1column.dart';
+import 'package:first_app/screen/list_tile_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -16,7 +16,8 @@ class App extends StatelessWidget {
       // home: CircleScreen(),
       // home: LayoutScreen(),
       // home: StarLayoutScreen(),
-      home: StarLayoutScreen1Column(),
+      // home: StarLayoutScreen1Column(),
+      home: ListTileScreen(),
     );
   }
 }
