@@ -10,7 +10,7 @@ class StarLayoutScreen1Column extends StatelessWidget {
         title: const Text("Star Layout"),
       ),
       body: Container(
-        color: Colors.green,
+        color: Colors.blue,
         child: const Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
