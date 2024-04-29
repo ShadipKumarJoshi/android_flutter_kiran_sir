@@ -1,4 +1,4 @@
-import 'package:first_app/screen/arithmetic_screen_1.dart';
+import 'package:first_app/screen/list_tile_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -17,8 +17,9 @@ class App extends StatelessWidget {
       // home: LayoutScreen(),
       // home: StarLayoutScreen(),
       // home: StarLayoutScreen1Column(),
-      // home: ListTileScreen(),
-      home: ArithmeticScreen1(),
+      home: ListTileScreen(),
+      // home: ArithmeticScreen1(),
+      // home: OutputScreen(),
     );
   }
 }
