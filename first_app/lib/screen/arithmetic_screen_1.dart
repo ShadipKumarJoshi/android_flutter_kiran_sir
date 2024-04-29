@@ -1,114 +1,139 @@
-import 'package:first_app/model/arithmetic_model.dart';
 import 'package:flutter/material.dart';
-//POJO
+
+class RadioButton extends StatelessWidget {
+  const RadioButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Arithmetic Operations',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const ArithmeticScreen1(),
+    );
+  }
+}
 
 class ArithmeticScreen1 extends StatefulWidget {
   const ArithmeticScreen1({super.key});
 
   @override
-  State<ArithmeticScreen1> createState() => _ArithmeticScreen1State();
+  _ArithmeticScreen1State createState() => _ArithmeticScreen1State();
 }
 
 class _ArithmeticScreen1State extends State<ArithmeticScreen1> {
-// Delcare variables
-  int? first;
-  int? second;
-  int result = 0;
+  final TextEditingController _firstNumberController = TextEditingController();
+  final TextEditingController _secondNumberController = TextEditingController();
+  String _operation = 'Add';
+  String _result = '';
 
-  //Relationship
-  // Loosley coupled
-  ArithemticModel? arithemticModel;
+  void _calculate() {
+    final double firstNum = double.tryParse(_firstNumberController.text) ?? 0;
+    final double secondNum = double.tryParse(_secondNumberController.text) ?? 0;
+    double result;
 
-  // Create global key for form // form needs this key to search // check state
-  final formKey = GlobalKey<FormState>();
+    switch (_operation) {
+      case 'Add':
+        result = firstNum + secondNum;
+        break;
+      case 'Subtract':
+        result = firstNum - secondNum;
+        break;
+      case 'Multiply':
+        result = firstNum * secondNum;
+        break;
+      case 'Divide':
+        result = (secondNum != 0) ? firstNum / secondNum : 0;
+        break;
+      default:
+        result = 0;
+    }
+
+    setState(() {
+      _result = result.toStringAsFixed(2);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
       appBar: AppBar(
-        title: const Text("Arithmetic"),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-        elevation: 0,
+        title: const Text('Arithmetic'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Form(
-          key: formKey,
-          // ctrl +. at coloum to wrap with result, change widget to Form and add key: formkey
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // TextField has no validator so use TextFormField
-              TextFormField(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextFormField(
+              controller: _firstNumberController,
+              decoration: const InputDecoration(labelText: 'First number'),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+            ),
+            TextFormField(
+              controller: _secondNumberController,
+              decoration: const InputDecoration(labelText: 'Second number'),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+            ),
+            ListTile(
+              title: const Text('Add'),
+              leading: Radio(
+                value: 'Add',
+                groupValue: _operation,
                 onChanged: (value) {
-                  first = int.parse(value);
-                },
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter First No',
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Enter first no";
-                  }
-                  return null;
+                  setState(() {
+                    _operation = value.toString();
+                  });
                 },
               ),
-              const SizedBox(height: 8),
-              TextFormField(
+            ),
+            ListTile(
+              title: const Text('Subtract'),
+              leading: Radio(
+                value: 'Subtract',
+                groupValue: _operation,
                 onChanged: (value) {
-                  second = int.parse(value);
+                  setState(() {
+                    _operation = value.toString();
+                  });
                 },
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter Second No',
-                ),
               ),
-              const SizedBox(height: 8),
-              // Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // form validation after clicking button
-                    if (formKey.currentState!.validate()) {
-                      // code runs only after validation is done
-                      setState(
-                        () {
-                          // //Al;gorith,m
-                          // // Business logic
-                          // result = first! + second!;
-                          arithemticModel =
-                              ArithemticModel(first: first!, second: second!);
-                          result = arithemticModel!.add();
-                        },
-                      );
-                    }
-                  },
-                  child: const Text(
-                    'Add',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
+            ),
+            ListTile(
+              title: const Text('Multiply'),
+              leading: Radio(
+                value: 'Multiply',
+                groupValue: _operation,
+                onChanged: (value) {
+                  setState(() {
+                    _operation = value.toString();
+                  });
+                },
               ),
-              const SizedBox(height: 8),
-
-              // Display informatuion
-              Text(
-                'Sum is : $result',
-                style: const TextStyle(
-                  fontSize: 30,
-                ),
+            ),
+            ListTile(
+              title: const Text('Divide'),
+              leading: Radio(
+                value: 'Divide',
+                groupValue: _operation,
+                onChanged: (value) {
+                  setState(() {
+                    _operation = value.toString();
+                  });
+                },
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _calculate,
+              child: const Text('Calculate'),
+            ),
+            const SizedBox(height: 20),
+            Text('Result: $_result'),
+          ],
         ),
       ),
     );

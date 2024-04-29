@@ -1,3 +1,0 @@
-cd simple_interest
-
-swapp and simple interest
