@@ -71,10 +71,19 @@ class ListTileScreen extends StatelessWidget {
         child: Column(
           children: [
             for (int i = 0; i <= 1000; i++) ...{
-              if (i % 2 == 0)
+              // if (i % 2 == 0)
+              //   ListTileWidget(
+              //     index: i,
+              //   ),
+              if (i % 2 == 0) ...{
                 ListTileWidget(
                   index: i,
+                  imageName: 'assets/images/image_2.jpg',
                 ),
+              } else ...{
+                ListTileWidget(
+                    index: i, imageName: 'assets/images/image_1.jpg'),
+              }
             }
           ],
         ),
