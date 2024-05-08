@@ -1,5 +1,4 @@
-import 'package:first_app/screen/calculator_landscape_screen.dart';
-import 'package:first_app/screen/list_tile_screen.dart';
+import 'package:first_app/screen/calculator_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -21,7 +20,8 @@ class App extends StatelessWidget {
       // home: ListTileScreen(),
       // home: ArithmeticScreen1(),
       // home: OutputScreen(),
-      home: CalculatorLandscapeScreen(),
+      // home: CalculatorLandscapeScreen(),
+      home: CalculatorScreen(),
     );
   }
 }
