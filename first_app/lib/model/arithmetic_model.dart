@@ -9,7 +9,7 @@ class ArithemticModel {
 
   // Add
   int add() {
-    return first + second + 1;
+    return first + second;
   }
 
   // Sub

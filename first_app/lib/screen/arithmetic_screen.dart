@@ -18,9 +18,15 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
   //Relationship
   // Loosley coupled
   ArithemticModel? arithemticModel;
+  //  ArithemticModel encapsulates the arithmetic logic.
+  // ArithemticModel? arithemticModel;: This variable holds an instance of ArithemticModel,
+  //which encapsulates the arithmetic logic.
+  //It's nullable (ArithemticModel?) because it's initialized later.
 
   // Create global key for form // form needs this key to search // check state
   final formKey = GlobalKey<FormState>();
+  // Form validation is implemented using GlobalKey<FormState> and the validator property of the TextFormField widgets.
+// If the validation passes, the arithmetic operation is performed; otherwise, appropriate error messages are displayed.
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +74,12 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
                   border: OutlineInputBorder(),
                   labelText: 'Enter Second No',
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Enter second no";
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: 8),
               // Button

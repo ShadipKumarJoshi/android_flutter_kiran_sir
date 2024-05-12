@@ -7,7 +7,7 @@ class LayoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ASdasd'),
+        title: const Text('Navbar Layout'),
       ),
       body: Container(
         color: Colors.amber[100],

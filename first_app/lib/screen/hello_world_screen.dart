@@ -53,7 +53,7 @@ class _HelloWorldScreenState extends State<HelloWorldScreen> {
               ),
             ),
             const SizedBox(
-              height: 8,
+              height: 8
             ),
             ElevatedButton(
               onPressed: () {

@@ -1,4 +1,3 @@
-import 'package:first_app/screen/calculator_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -13,15 +12,18 @@ class App extends StatelessWidget {
       // home: SimpleInterestScreen(),
       // home: SwapNumbersScreen(),
       // home: ArithmeticScreen(),
+      // home: ArithmeticScreen1(),
       // home: CircleScreen(),
+      // home: CustomWidgetScreen(),
       // home: LayoutScreen(),
       // home: StarLayoutScreen(),
       // home: StarLayoutScreen1Column(),
       // home: ListTileScreen(),
       // home: ArithmeticScreen1(),
-      // home: OutputScreen(),
+      // home: OutputScreen(title: ''),
       // home: CalculatorLandscapeScreen(),
-      home: CalculatorScreen(),
+      // home: CalculatorPortraitScreen(),
+      // home: CalculatorScreen(),
     );
   }
 }
