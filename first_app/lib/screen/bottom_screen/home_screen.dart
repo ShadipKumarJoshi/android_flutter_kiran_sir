@@ -8,7 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SizedBox.expand(
-      child: Text('Home Screen'),
+      // no scaffold.. use sizedbox
+      child: Center(
+        child: Text('Home Screen'),
+      ),
     );
   }
 }

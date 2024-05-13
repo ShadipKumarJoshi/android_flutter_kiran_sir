@@ -8,7 +8,9 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SizedBox.expand(
-      child: Text('Cart'),
+      child: Center(
+        child: Text('Cart'),
+      ),
     );
   }
 }
