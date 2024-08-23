@@ -96,19 +96,20 @@ class _NumberScreenState extends State<NumberScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed:noOfCount == 10 ? null
-                    () {
-                      setState(() {
-                        if (_secondNumber > _firstNumber) {
-                          correctAnswer++;
-                          _color = Colors.green;
-                        } else {
-                          incorrectAnswer++;
-                          _color = Colors.red;
-                        }
-                        _generateRandomNumber();
-                      });
-                    },
+                    onPressed: noOfCount == 10
+                        ? null
+                        : () {
+                            setState(() {
+                              if (_secondNumber > _firstNumber) {
+                                correctAnswer++;
+                                _color = Colors.green;
+                              } else {
+                                incorrectAnswer++;
+                                _color = Colors.red;
+                              }
+                              _generateRandomNumber();
+                            });
+                          },
                     child: Text(
                       _secondNumber.toString(),
                       style: const TextStyle(
